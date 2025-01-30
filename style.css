@@ -9,6 +9,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
 }
 
 html {
@@ -151,10 +152,11 @@ a:hover {
 section {
   padding-top: 4vh;
   height: 96vh;
-  margin: 0 10rem;
+  margin: 0 5%;
   box-sizing: border-box;
   min-height: fit-content;
 }
+
 
 .section-container {
   display: flex;
@@ -169,17 +171,20 @@ section {
   height: 80vh;
 }
 
-.section__pic-container {
-  display: flex;
-  height: 400px;
-  width: 400px;
-  margin: auto 0;
-}
+
 
 .section__text {
   align-self: center;
   text-align: center;
+}.section__pic-container {
+  display: flex;
+  width: 400px;
+  height: 400px;
+  margin: auto 0;
+  border-radius: 50%; /* Keeps it circular */
+  overflow: hidden; /* Ensures the image fits inside */
 }
+
 
 .section__text p {
   font-weight: 600;
@@ -313,8 +318,149 @@ section {
   width: 400px;
   margin: auto 0;
 }
+.section__pic-container img {
+  width: 100%; /* Makes the image fill the container */
+  height: 100%; /* Ensures consistent scaling */
+  object-fit: cover; /* Keeps the image properly cropped */
+}
+/* CERTIFICATIONS SECTION */
+#certifications {
+  text-align: center;
+  padding: 5vh 10vw;
+}
+
+.certifications-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.certification-card {
+  background: white;
+  border: 1px solid rgb(163, 163, 163);
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.certification-img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.certification-title {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.certification-expiry {
+  font-size: 1rem;
+  color: rgb(85, 85, 85);
+  margin-bottom: 1rem;
+}
+
+.certification-card .btn {
+  font-weight: 600;
+  padding: 0.8rem;
+  width: 80%;
+  border-radius: 5px;
+  background: rgb(53, 53, 53);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.certification-card .btn:hover {
+  background: rgb(0, 0, 0);
+}
+
+
 
 /* EXPERIENCE SECTION */
+
+.contact-info-container {
+  display: flex;
+  justify-content: space-between; /* Space between title and duration */
+  align-items: center; /* Align vertically */
+  width: 100%;
+  max-width: 800px; /* Increase width to accommodate longer text */
+  margin: 0 auto; /* Center the container */
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+.contact-info-container h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: left;
+  flex: 1; /* Allows title to take remaining space */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Prevents overflow and adds "..." if text is too long */
+  white-space: nowrap;
+}
+.contact-info-container img {
+  border-radius: 0; /* Makes the image square */
+}
+
+
+.experience-duration {
+  font-size: 0.9rem;
+  color: #302c2c;
+  font-weight: bold;
+  text-align: right;
+  margin-left: 20px; /* Add spacing between title and date */
+  white-space: nowrap; /* Prevents line break */
+}
+
+
+.show-more-btn {
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+.more-text {
+  display: none; /* Hide the additional text initially */
+}
+
+.show-more-btn {
+  background-color: #007bff; /* Button color */
+  color: #fff; /* Text color */
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+}
+
+.show-more-btn:hover {
+  background-color: #0056b3; /* Darker color on hover */
+}
+
+.more-text {
+  display: none; /* Hide additional text initially */
+}
+
+.show-more-btn {
+  background-color: #007bff; /* Button color */
+  color: #fff; /* Text color */
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+}
+
+.show-more-btn:hover {
+  background-color: #0056b3; /* Darker color on hover */
+}
 
 #experience {
   position: relative;
@@ -403,9 +549,7 @@ article .icon {
 .contact-info-container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  margin: 1rem;
+  gap: 1rem; /* Adjust spacing between the icon and text */
 }
 
 .contact-info-container p {

@@ -41,7 +41,10 @@
       width: 275px;
       height: 275px;
       margin: 0 auto 2rem;
+      border-radius: 50%; /* This creates the circular shape */
+      overflow: hidden; /* Ensures the image fits inside the container */
     }
+    
     .about-containers {
       margin-top: 0;
     }

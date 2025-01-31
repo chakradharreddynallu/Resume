@@ -21,8 +21,21 @@
     }
     #experience,
     .experience-details-container {
-      margin-top: 2rem;
-    }
+      display: flex;
+      flex-wrap: wrap; /* Ensures wrapping if needed */
+      justify-content: center; /* Centers experience boxes */
+      gap: 1.5rem; /* Adds spacing between items */
+  }
+
+  .details-container {
+      width: 90%; /* Adjusts width for responsiveness */
+      max-width: 600px; /* Prevents excessive stretching */
+      padding: 20px; /* Adds internal spacing */
+      text-align: center;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      box-sizing: border-box;
+  }
     #profile,
     .section-container {
       display: block;
@@ -35,7 +48,8 @@
       height: fit-content;
     }
     section {
-      margin: 0 5%;
+      margin: 0 auto;
+      padding: 40px 5%; /* Reduced padding */
     }
     .section__pic-container {
       width: 275px;
@@ -66,6 +80,25 @@
       height: fit-content;
       margin-bottom: 2rem;
     }
+    .experience-details-container {
+      flex-direction: column; /* Stacks the experience cards */
+      align-items: center;
+  }
+
+  .details-container {
+      width: 100%; /* Ensures a better fit for smaller screens */
+      max-width: 900px;
+  }
+
+  .experience-description {
+      font-size: 1rem;
+      text-align: center;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      max-width: 100%;
+      padding: 10px;
+      margin: 0 auto;
+  }
     .about-containers,
     .contact-info-upper-container,
     .btn-container {
@@ -94,11 +127,17 @@
       height: 46vw;
       justify-content: center;
     }
+    .section__text__p1 {
+      text-align: center;
+    }
     .section__text__p2 {
       font-size: 1.25rem;
     }
     .title {
-      font-size: 2rem;
+      font-size: 3rem; /* Increase title size */
+      text-align: center; /* Center the title */
+      font-weight: bold;
+      margin-bottom: 10px; /* Adjust spacing below title */
     }
     .text-container {
       text-align: justify;

@@ -14,6 +14,7 @@ body {
 
 html {
   scroll-behavior: smooth;
+  background-color: #e6e6fa;
 }
 
 p {
@@ -150,12 +151,27 @@ a:hover {
 /* SECTIONS */
 
 section {
-  padding-top: 4vh;
-  height: 96vh;
-  margin: 0 5%;
+  padding: 50px 5%; /* Reduce vertical spacing */
+  margin: 0 auto;
+  width: 90%;
   box-sizing: border-box;
-  min-height: fit-content;
 }
+
+
+.title {
+  font-size: 3rem; /* Increase title size */
+  text-align: center; /* Center the title */
+  font-weight: bold;
+  margin-bottom: 15px; /* Adjust spacing below title */
+}
+
+.section__text__p1 {
+  text-align: center; /* Center the text */
+  display: block;
+  font-size: 1.2rem; /* Adjust font size if needed */
+  margin-bottom: 5px; /* Add spacing below */
+}
+
 
 
 .section-container {
@@ -190,19 +206,14 @@ section {
   font-weight: 600;
 }
 
-.section__text__p1 {
-  text-align: center;
-}
+
 
 .section__text__p2 {
   font-size: 1.75rem;
   margin-bottom: 1rem;
 }
 
-.title {
-  font-size: 3rem;
-  text-align: center;
-}
+
 
 #socials-container {
   display: flex;
@@ -299,18 +310,28 @@ section {
 }
 
 .details-container {
-  padding: 1.5rem;
-  flex: 1;
-  background: white;
-  border-radius: 2rem;
-  border: rgb(53, 53, 53) 0.1rem solid;
-  border-color: rgb(163, 163, 163);
+  flex: 1; /* Allows equal width distribution */
+  width: 100%; /* Ensures full width usage */
+  max-width: 500px; /* Prevents stretching */
+  padding: 20px;
   text-align: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
 }
+
 
 .section-container {
   gap: 4rem;
   height: 80%;
+}
+.experience-description {
+  font-size: 1rem;
+  text-align: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  padding: 10px;
+  max-width: 100%;
 }
 
 .section__pic-container {
@@ -331,20 +352,33 @@ section {
 
 .certifications-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
+  justify-content: space-between; /* Ensures spacing between items */
+  gap: 1rem; /* Adjust spacing between certificates */
+  flex-wrap: nowrap; /* Prevents wrapping onto a new line */
+}
+.certification-card {
+  width: 22%; /* Ensures four fit in a row */
+  min-width: 250px; /* Prevents excessive shrinking */
+  text-align: center;
+}
+@media screen and (max-width: 1200px) {
+  .certifications-container {
+    flex-wrap: wrap; /* Allows wrapping when screen size is small */
+    justify-content: center;
+  }
+
+  .certification-card {
+    width: 45%; /* Two in a row for medium screens */
+  }
 }
 
-.certification-card {
-  background: white;
-  border: 1px solid rgb(163, 163, 163);
-  border-radius: 10px;
-  padding: 1.5rem;
-  width: 300px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+@media screen and (max-width: 768px) {
+  .certification-card {
+    width: 100%; /* Stack on smaller screens */
+  }
 }
+
+
 
 .certification-img {
   width: 100%;
@@ -404,18 +438,25 @@ section {
   text-overflow: ellipsis; /* Prevents overflow and adds "..." if text is too long */
   white-space: nowrap;
 }
-.contact-info-container img {
-  border-radius: 0; /* Makes the image square */
+.experience-details-container .contact-icon {
+  width: 65px;
+  height: 65px;
+}
+.experience-header {
+  display: flex;
+  flex-direction: column; /* Ensures elements stack */
 }
 
 
+
 .experience-duration {
-  font-size: 0.9rem;
-  color: #302c2c;
-  font-weight: bold;
-  text-align: right;
-  margin-left: 20px; /* Add spacing between title and date */
-  white-space: nowrap; /* Prevents line break */
+  .experience-duration {
+    display: block; /* Forces it onto a new line */
+    font-size: 1rem;
+    color: #302c2c;
+    font-weight: bold;
+    margin-top: 0.3rem; /* Adds slight spacing */
+  }
 }
 
 
@@ -475,8 +516,30 @@ section {
 
 .experience-details-container {
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  flex-wrap: wrap; /* Ensures wrapping if needed */
+  justify-content: center; /* Centers the boxes */
+  gap: 1.5rem; /* Adds spacing between boxes */
+}
+.experience-description {
+  font-size: 1rem;
+  text-align: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  padding: 10px;
+  margin: 0 auto; /* Centers the text inside the box */
+}
+.about-containers {
+  display: flex;
+  flex-direction: row; /* Arrange experiences side by side */
+  gap: 2rem;
+  flex-wrap: wrap; /* Ensures responsiveness on smaller screens */
+}
+
+.details-container {
+  flex: 1; /* Allow equal width distribution */
+  min-width: 300px; /* Prevents excessive shrinking */
+  max-width: 500px; /* Ensures readability */
 }
 
 .article-container {
